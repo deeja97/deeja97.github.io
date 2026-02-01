@@ -1,1 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery | Brian Memorial Golf Tournament</title>
+  <style>
+    :root { --max: 980px; }
+    body { font-family: system-ui, -apple-system, Arial, sans-serif; margin:0; color:#111; }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+    nav { position: sticky; top: 0; background:#fff; border-bottom:1px solid #eee; }
+    nav .wrap { display:flex; align-items:center; justify-content:space-between; padding: 12px 18px; }
+    .links a { margin-left: 12px; text-decoration:none; opacity:.85; }
+    .links a:hover { opacity:1; text-decoration: underline; }
+    header { padding: 44px 0 12px; }
+    h1 { margin:0 0 10px; font-size: 34px; }
+    .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    @media (min-width: 820px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+    .ph { aspect-ratio: 1/1; border-radius: 12px; background:#f3f3f3; border:1px solid #eee; }
+    section { padding: 22px 0 34px; border-top:1px solid #eee; }
+    footer { padding: 26px 0 40px; opacity:.8; }
+    .small { font-size: 14px; opacity:.85; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <strong>Brian Memorial Golf Tournament</strong>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Brian</a>
+        <a href="tournament.html">Tournament</a>
+        <a href="donate.html">Donate</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="stories.html">Stories</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="wrap">
+    <h1>Gallery</h1>
+    <p class="small">Photos from Brian’s life and past tournaments.</p>
+  </header>
+
+  <section class="wrap">
+    <div class="grid">
+      <div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div>
+      <div class="ph"></div><div class="ph"></div><div class="ph"></div><div class="ph"></div>
+    </div>
+    <p class="small" style="margin-top:10px;">Next: upload real photos and we’ll replace these placeholders.</p>
+  </section>
+
+  <footer class="wrap">
+    <p class="small">© <span id="y"></span> Brian Memorial Golf Tournament</p>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
 
