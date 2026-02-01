@@ -3,36 +3,170 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery | Brian Memorial Golf Tournament</title>
-  <style>
-    :root { --max: 980px; }
-    body { font-family: system-ui, -apple-system, Arial, sans-serif; margin:0; color:#111; }
-    a { color: inherit; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 18px; }
-    nav { position: sticky; top: 0; background:#fff; border-bottom:1px solid #eee; }
-    nav .wrap { display:flex; align-items:center; justify-content:space-between; padding: 12px 18px; }
-    .links a { margin-left: 12px; text-decoration:none; opacity:.85; }
-    .links a:hover { opacity:1; text-decoration: underline; }
-    header { padding: 44px 0 12px; }
-    h1 { margin:0 0 10px; font-size: 34px; }
-    .grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    @media (min-width: 820px) { .grid { grid-template-columns: repeat(4, 1fr); } }
-    .ph { aspect-ratio: 1/1; border-radius: 12px; background:#f3f3f3; border:1px solid #eee; }
-    section { padding: 22px 0 34px; border-top:1px solid #eee; }
-    footer { padding: 26px 0 40px; opacity:.8; }
-    .small { font-size: 14px; opacity:.85; }
-   .gallery-img { width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid #eee;}
+  <title>Gallery | Brian Banks Memorial Golf Tournament</title>
 
+  <style>
+    :root { --max: 1100px; }
+
+    body {
+      font-family: system-ui, -apple-system, Arial, sans-serif;
+      margin: 0;
+      color: #111;
+      background: #fff;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      z-index: 100;
+    }
+
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+    }
+
+    .links a {
+      margin-left: 14px;
+      text-decoration: none;
+      opacity: 0.85;
+    }
+
+    .links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    header {
+      padding: 44px 0 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 36px;
+    }
+
+    .sub {
+      opacity: 0.85;
+      max-width: 70ch;
+    }
+
+    /* GALLERY GRID */
+    section {
+      padding: 24px 0 40px;
+      border-top: 1px solid #eee;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (min-width: 820px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .gallery-thumb {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid #eee;
+      cursor: pointer;
+      display: block;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-card {
+      width: min(1100px, 100%);
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+
+    .lightbox-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .lightbox-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .lightbox-btn {
+      padding: 10px 14px;
+      border: 1px solid #111;
+      border-radius: 12px;
+      text-decoration: none;
+      background: #fff;
+      font-size: 14px;
+    }
+
+    .close-btn {
+      background: #111;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .lightbox-img {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      background: #000;
+      display: block;
+    }
+
+    footer {
+      padding: 26px 0 40px;
+      opacity: 0.8;
+      font-size: 14px;
+    }
   </style>
 </head>
+
 <body>
+
+  <!-- NAV -->
   <nav>
     <div class="wrap">
-      <strong>Brian Memorial Golf Tournament</strong>
+      <strong>Brian Banks Memorial Golf Tournament</strong>
       <div class="links">
         <a href="index.html">Home</a>
         <a href="about.html">About Brian</a>
@@ -44,29 +178,84 @@
     </div>
   </nav>
 
+  <!-- HEADER -->
   <header class="wrap">
-    <h1>Gallery</h1>
-    <p class="small">Photos from Brian’s life and past tournaments.</p>
+    <h1>Photo Gallery</h1>
+    <p class="sub">
+      Moments from Brian’s life and past memorial golf tournaments.
+      Click any photo to view it larger or download.
+    </p>
   </header>
 
+  <!-- GALLERY -->
   <section class="wrap">
-    <div class="grid">
-      <img src="assets/gallery-1.jpg" alt="Brian Memorial Golf Tournament" class="gallery-img">
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
-      <div class="ph"></div>
+    <div class="gallery-grid">
+
+      <!-- ADD MORE IMAGES BY COPYING A LINE -->
+      <img src="assets/gallery-1.jpg"
+           alt="Brian Banks Memorial Golf Tournament"
+           class="gallery-thumb"
+           data-full="assets/gallery-1.jpg">
+
     </div>
-    <p class="small" style="margin-top:10px;">Next: upload real photos and we’ll replace these placeholders.</p>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-card">
+      <div class="lightbox-top">
+        <strong>Photo</strong>
+        <div class="lightbox-actions">
+          <a id="downloadLink" class="lightbox-btn" download>Download</a>
+          <button id="closeBtn" class="lightbox-btn close-btn">Close</button>
+        </div>
+      </div>
+      <img id="lightboxImg" class="lightbox-img" alt="Expanded image">
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const downloadLink = document.getElementById("downloadLink");
+    const closeBtn = document.getElementById("closeBtn");
+
+    document.querySelectorAll(".gallery-thumb").forEach(img => {
+      img.addEventListener("click", () => {
+        const src = img.getAttribute("data-full") || img.src;
+        lightboxImg.src = src;
+        downloadLink.href = src;
+        downloadLink.download = src.split("/").pop();
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    closeBtn.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
+
   <footer class="wrap">
-    <p class="small">© <span id="y"></span> Brian Memorial Golf Tournament</p>
+    © <span id="year"></span> Brian Banks Memorial Golf Tournament
   </footer>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
-
